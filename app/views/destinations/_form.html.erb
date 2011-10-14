@@ -1,0 +1,28 @@
+<%= form_for(@destination) do |f| %>
+  <% if @destination.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@destination.errors.count, "error") %> prohibited this destination from being saved:</h2>
+
+      <ul>
+      <% @destination.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :street %><br />
+    <%= f.text_field :street %>
+  </div>
+  <p>OR</p>
+
+  <div class="field">
+    <%= f.label :spot %><br />
+    <%= f.text_field :spot %>
+  </div>
+  <p></p>
+  <div class="actions">
+    <%= f.submit%>
+  </div>
+<% end %>

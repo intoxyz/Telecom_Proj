@@ -1,7 +1,12 @@
 TelecomProj::Application.routes.draw do
+  resources :destinations
+
   get "pages/home"
 
   get "pages/contact"
+
+
+  root :to => 'destinations#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
